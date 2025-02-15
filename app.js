@@ -4,11 +4,12 @@ const Product = require('./models/product'); // ✅ Ensure correct import
 const User = require('./models/user');
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcrypt')
+const cors = require('cors')
 
 const secretKey = "secret123"
 const app = express();
 const port = 3000;
-
+app.use(cors())
 app.use(express.json());
 
 // ✅ MongoDB Connection (Ensure IP Whitelist in MongoDB Atlas)
